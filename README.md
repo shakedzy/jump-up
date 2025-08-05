@@ -1,6 +1,6 @@
-# 🦕 Kids Dino Adventure - Multiplayer Game
+# 🚀 Jump Up
 
-A kid-friendly version of Chrome's Dino game with multiplayer support and accessibility features designed for young children.
+A kid-friendly multiplayer game based on Chrome's Dino game. Designed with support and accessibility features for young children.
 
 ## Features
 
