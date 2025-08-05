@@ -31,10 +31,10 @@ A kid-friendly multiplayer game based on Chrome's Dino game. Designed with suppo
 Help the dino friends run as far as possible by jumping over obstacles!
 
 ### 🎮 Controls
-- **Player 1**: SPACE key only
+- **Player 1**: SPACE key
 - **Player 2**: ENTER key
-- **Player 3**: I key
-- **Player 4**: Numpad 8
+- **Player 3**: Arrow Up
+- **Player 4**: W Key
 
 ### 🚀 Getting Started
 1. Choose the number of players (1-4)
@@ -44,7 +44,6 @@ Help the dino friends run as far as possible by jumping over obstacles!
 
 ### ⚙️ Settings
 - **Sound Effects**: Toggle game sounds on/off
-- **Warning Hints**: Enable/disable early warning symbol ⚠️ (shows 2 seconds before obstacle)
 - **Jump Hints**: Enable/disable jump timing symbol ⬆️ (shows at optimal jump moment)
 - **Game Speed**: Choose between Slow 🐌 (extra kid-friendly), Normal 🏃, or Fast 🚀
 
@@ -115,4 +114,4 @@ This project is open source and available under the MIT License.
 
 ---
 
-Made with ❤️ for kids who love dinosaurs! 🦕🦖
+Made with ❤️ for kids!
