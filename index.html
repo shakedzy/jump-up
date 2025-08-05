@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jump Up! - Kids Multiplayer Game</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="gameContainer">
+        <!-- Main Menu -->
+        <div id="mainMenu" class="menu-screen">
+            <h1 class="game-title">🚀 Jump Up! 🚀</h1>
+            <p class="subtitle">Help the characters jump over obstacles and see how far you can go!</p>
+            <div class="menu-buttons">
+                <button class="menu-btn" onclick="showPlayerSelect()">
+                    <span class="btn-icon">🎮</span>
+                    Start Game
+                </button>
+                <button class="menu-btn" onclick="showSettings()">
+                    <span class="btn-icon">⚙️</span>
+                    Settings
+                </button>
+                <button class="menu-btn" onclick="showInstructions()">
+                    <span class="btn-icon">❓</span>
+                    How to Play
+                </button>
+            </div>
+        </div>
+
+        <!-- Player Selection -->
+        <div id="playerSelect" class="menu-screen hidden">
+            <h2>Choose Number of Players</h2>
+            <div class="player-buttons">
+                <button class="player-btn" onclick="startGame(1)">
+                    <span class="player-icon">👤</span>
+                    1 Player
+                </button>
+                <button class="player-btn" onclick="startGame(2)">
+                    <span class="player-icon">👥</span>
+                    2 Players
+                </button>
+                <button class="player-btn" onclick="startGame(3)">
+                    <span class="player-icon">👥👤</span>
+                    3 Players
+                </button>
+                <button class="player-btn" onclick="startGame(4)">
+                    <span class="player-icon">👥👥</span>
+                    4 Players
+                </button>
+            </div>
+            <button class="back-btn" onclick="showMainMenu()">
+                <span class="btn-icon">⬅️</span>
+                Back
+            </button>
+        </div>
+
+        <!-- Settings Menu -->
+        <div id="settings" class="menu-screen hidden">
+            <h2>⚙️ Settings</h2>
+            <div class="settings-panel">
+                <div class="setting-group">
+                    <label class="setting-label">
+                        <span class="setting-icon">🔊</span>
+                        Sound Effects
+                    </label>
+                    <input type="checkbox" id="soundEffects" checked>
+                </div>
+
+                <div class="setting-group">
+                    <label class="setting-label">
+                        <span class="setting-icon">⬆️</span>
+                        Jump Hints
+                    </label>
+                    <div class="hint-players">
+                        <div class="hint-player-toggle">
+                            <span>🔴 P1</span>
+                            <input type="checkbox" id="jumpHints1" checked>
+                        </div>
+                        <div class="hint-player-toggle">
+                            <span>🔵 P2</span>
+                            <input type="checkbox" id="jumpHints2" checked>
+                        </div>
+                        <div class="hint-player-toggle">
+                            <span>🟡 P3</span>
+                            <input type="checkbox" id="jumpHints3" checked>
+                        </div>
+                        <div class="hint-player-toggle">
+                            <span>🟢 P4</span>
+                            <input type="checkbox" id="jumpHints4" checked>
+                        </div>
+                    </div>
+                </div>
+                <div class="setting-group">
+                    <label class="setting-label">
+                        <span class="setting-icon">🚀</span>
+                        Game Speed
+                    </label>
+                    <select id="gameSpeed">
+                        <option value="slow">🐌 Slow</option>
+                        <option value="normal" selected>🏃 Normal</option>
+                        <option value="fast">🚀 Fast</option>
+                    </select>
+                </div>
+                <div class="setting-group-center">
+                    <button id="clearHighScore" class="clear-score-btn">
+                        🗑️ Clear High Score
+                    </button>
+                </div>
+            </div>
+            <button class="back-btn" onclick="showMainMenu()">
+                <span class="btn-icon">⬅️</span>
+                Back
+            </button>
+        </div>
+
+        <!-- Instructions -->
+        <div id="instructions" class="menu-screen hidden">
+            <h2>❓ How to Play</h2>
+            <div class="instructions-content">
+                <div class="instruction-item">
+                    <span class="instruction-icon">🏃</span>
+                    <p>Help your characters run and jump together!</p>
+                </div>
+                <div class="instruction-item">
+                    <span class="instruction-icon">⬆️</span>
+                    <p>Player 1: SPACE | Player 2: ENTER</p>
+                </div>
+                <div class="instruction-item">
+                    <span class="instruction-icon">🎮</span>
+                    <p>Player 3: ↑ ARROW | Player 4: W KEY</p>
+                </div>
+                <div class="instruction-item">
+                    <span class="instruction-icon">🌳</span>
+                    <p>Jump over trees and obstacles!</p>
+                </div>
+                <div class="instruction-item">
+                    <span class="instruction-icon">💡</span>
+                    <p>Watch for jump hints to avoid obstacles!</p>
+                </div>
+                <div class="instruction-item">
+                    <span class="instruction-icon">🎮</span>
+                    <p>Play with up to 4 players on the same screen!</p>
+                </div>
+                <div class="instruction-item">
+                    <span class="instruction-icon">🏆</span>
+                    <p>See how far you can run together!</p>
+                </div>
+            </div>
+            <button class="back-btn" onclick="showMainMenu()">
+                <span class="btn-icon">⬅️</span>
+                Back
+            </button>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="gameScreen" class="hidden">
+            <div id="gameHeader">
+                <div id="scoreDisplay"></div>
+                <div id="gameControls">
+                    <button id="pauseBtn" onclick="togglePause()">⏸️</button>
+                    <button id="menuBtn" onclick="endGame()">🏠</button>
+                </div>
+            </div>
+
+            <div id="playersContainer">
+                <!-- Player areas will be dynamically created -->
+            </div>
+
+            <!-- Per-player hint overlays will be created dynamically -->
+        </div>
+
+        <!-- Game Over Screen -->
+        <div id="gameOver" class="menu-screen hidden">
+            <h2>🎉 Great Job! 🎉</h2>
+            <div id="finalScores"></div>
+            <div class="menu-buttons">
+                <button class="menu-btn" onclick="restartGame()">
+                    <span class="btn-icon">🔄</span>
+                    Play Again
+                </button>
+                <button class="menu-btn" onclick="showMainMenu()">
+                    <span class="btn-icon">🏠</span>
+                    Main Menu
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
