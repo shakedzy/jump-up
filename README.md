@@ -2,6 +2,32 @@
 
 A kid-friendly multiplayer game based on Chrome's Dino game. Designed with support and accessibility features for young children.
 
+<p align="center">
+  <a href="https://shakedzy.xyz/jump-up/" target="_blank" rel="noopener" style="text-decoration: none;">
+    <span style="
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6em;
+      background: linear-gradient(90deg, #e0e7ff 0%, #f3f4f6 100%);
+      border-radius: 1.3em;
+      padding: 0.35em 1.1em;
+      font-size: 0.98em;
+      font-family: inherit;
+      border: 1.2px solid #c7d2fe;
+      box-shadow: 0 1px 7px 0 #e0e7ff60;
+      margin-bottom: 1em;
+      font-weight: 600;
+      color: #1e293b;
+      transition: box-shadow 0.2s;
+    ">
+      <span style="font-size: 1.2em;">🎮</span>
+      <span>
+        <span style="color: #6366f1;">Click to play online!</span>
+      </span>
+    </span>
+  </a>
+</p>
+
 ## Features
 
 ### 🎮 Core Gameplay
